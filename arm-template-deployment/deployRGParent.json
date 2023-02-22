@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "variables": {
     "sourceCodeBranch" : "master",
-    "templateBaseUri": "[concat('https://raw.githubusercontent.com/logicmonitor/lm-logs-azure/',variables('sourceCodeBranch'),'/arm-template-deployment/')]",
+    "templateBaseUri": "[concat('https://raw.githubusercontent.com/choudharypooja/lm-logs-azure/',variables('sourceCodeBranch'),'/arm-template-deployment/')]",
     "deploymentResourceGroupName": "[concat('lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('resource_group_region'),' ',''),'-group')]",
     "eventhubNamespace": "[concat('lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('resource_group_region'),' ',''))]",
     "eventhubLogsName": "log-hub",
@@ -28,6 +28,19 @@
       "metadata": {
         "description": "Application Client Id provided during the creation of azure account in LM"
       }
+    },
+    "filterName": {
+      "type": "String",
+      "defaultValue":"",
+      "allowedValues":["Message",""]
+    },
+    "filterOperator": {
+      "type": "String",
+      "defaultValue":"",
+      "allowedValues":["RegexMatch",""]
+    },
+    "filterValue": {
+      "type": "String"
     },
     "enableActivityLogs": {
       "type": "String",
@@ -136,4 +149,5 @@
     }
   ],
   "outputs": {}
+}
 }
