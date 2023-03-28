@@ -29,19 +29,6 @@
         "description": "Application Client Id provided during the creation of azure account in LM"
       }
     },
-    "filterName": {
-      "type": "String",
-      "defaultValue":"",
-      "allowedValues":["Message",""]
-    },
-    "filterOperator": {
-      "type": "String",
-      "defaultValue":"",
-      "allowedValues":["RegexMatch",""]
-    },
-    "filterValue": {
-      "type": "String"
-    },
     "enableActivityLogs": {
       "type": "String",
       "allowedValues": [
@@ -150,4 +137,4 @@
   ],
   "outputs": {}
 }
-}
+
